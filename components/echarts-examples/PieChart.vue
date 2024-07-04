@@ -5,14 +5,19 @@
 <script setup>
 import { use } from "echarts/core";
 import { PieChart } from "echarts/charts";
-import { CanvasRenderer } from "echarts/renderers";
+import { SVGRenderer } from "echarts/renderers";
 
-import VChart, { THEME_KEY } from "vue-echarts";
+import VChart, { THEME_KEY, INIT_OPTIONS_KEY } from "vue-echarts";
 import { ref, provide } from "vue";
 
-use([PieChart, CanvasRenderer]);
+use([PieChart, SVGRenderer]);
 
 provide(THEME_KEY, "dark");
+
+// provide(INIT_OPTIONS_KEY, {
+//   renderer: "svg",
+//   ssr: true,
+// });
 
 const option = ref({
   series: [

@@ -6,14 +6,19 @@
 import { use } from "echarts/core";
 import { LineChart } from "echarts/charts";
 import { GridComponent } from "echarts/components";
-import { CanvasRenderer } from "echarts/renderers";
+import { SVGRenderer } from "echarts/renderers";
 
-import VChart, { THEME_KEY } from "vue-echarts";
+import VChart, { THEME_KEY, INIT_OPTIONS_KEY } from "vue-echarts";
 import { ref, provide } from "vue";
 
-use([GridComponent, LineChart, CanvasRenderer]);
+use([GridComponent, LineChart, SVGRenderer]);
 
 provide(THEME_KEY, "dark");
+
+// provide(INIT_OPTIONS_KEY, {
+//   renderer: "svg",
+//   ssr: true,
+// });
 
 const option = ref({
   xAxis: {
