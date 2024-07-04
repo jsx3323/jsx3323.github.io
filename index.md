@@ -20,4 +20,3 @@ features:
   - title: D3
     details: The JavaScript library for bespoke data visualization
 ---
-

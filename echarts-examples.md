@@ -3,6 +3,7 @@ import BarChart from "./components/echarts-examples/BarChart.vue"
 import LineChart from "./components/echarts-examples/LineChart.vue"
 import PieChart from "./components/echarts-examples/PieChart.vue"
 import ScatterChart from "./components/echarts-examples/ScatterChart.vue"
+
 </script>
 
 <style module>
@@ -11,7 +12,6 @@ import ScatterChart from "./components/echarts-examples/ScatterChart.vue"
     height: 400px;
   }
 </style>
-
 
 # ECharts Examples
 
@@ -25,16 +25,15 @@ import ScatterChart from "./components/echarts-examples/ScatterChart.vue"
 
 ### Bar Chart
 
-A **bar chart** or **bar graph** is a chart or graph that presents categorical data with rectangular bars with heights or lengths proportional to the values that they represent. The bars can be plotted vertically or horizontally. A vertical bar chart is sometimes called a **column chart**. 
+A **bar chart** or **bar graph** is a chart or graph that presents categorical data with rectangular bars with heights or lengths proportional to the values that they represent. The bars can be plotted vertically or horizontally. A vertical bar chart is sometimes called a **column chart**.
 
 <div :class="$style.chart">
   <BarChart />
 </div>
 
-
 ### Line Chart
 
-A **line chart** or **line graph**, also known as **curve chart**, is a type of chart that displays information as a series of data points called 'markers' connected by straight line segments. It is a basic type of chart common in many fields. It is similar to a scatter plot except that the measurement points are ordered (typically by their x-axis value) and joined with straight line segments. A line chart is often used to visualize a trend in data over intervals of time – a time series – thus the line is often drawn chronologically. In these cases they are known as run charts. 
+A **line chart** or **line graph**, also known as **curve chart**, is a type of chart that displays information as a series of data points called 'markers' connected by straight line segments. It is a basic type of chart common in many fields. It is similar to a scatter plot except that the measurement points are ordered (typically by their x-axis value) and joined with straight line segments. A line chart is often used to visualize a trend in data over intervals of time – a time series – thus the line is often drawn chronologically. In these cases they are known as run charts.
 
 <div :class="$style.chart">
   <LineChart />
