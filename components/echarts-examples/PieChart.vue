@@ -1,43 +1,41 @@
 <template>
-  <v-chart class="chart" :option="option" autoresize />
+  <div id="pieChart"></div>
 </template>
 
 <script setup>
-import { use } from "echarts/core";
-import { PieChart } from "echarts/charts";
-import { SVGRenderer } from "echarts/renderers";
+import * as echarts from "echarts";
+import { onMounted } from "vue";
 
-import VChart, { THEME_KEY, INIT_OPTIONS_KEY } from "vue-echarts";
-import { ref, provide } from "vue";
+onMounted(() => {
+  let myChart = echarts.init(document.getElementById("pieChart"), "dark");
 
-use([PieChart, SVGRenderer]);
-
-provide(THEME_KEY, "dark");
-
-// provide(INIT_OPTIONS_KEY, {
-//   renderer: "svg",
-//   ssr: true,
-// });
-
-const option = ref({
-  series: [
-    {
-      type: "pie",
-      data: [
-        {
-          value: 335,
-          name: "Direct Visit",
-        },
-        {
-          value: 234,
-          name: "Union Ad",
-        },
-        {
-          value: 1548,
-          name: "Search Engine",
-        },
-      ],
-    },
-  ],
+  myChart.setOption({
+    series: [
+      {
+        type: "pie",
+        data: [
+          {
+            value: 335,
+            name: "Direct Visit",
+          },
+          {
+            value: 234,
+            name: "Union Ad",
+          },
+          {
+            value: 1548,
+            name: "Search Engine",
+          },
+        ],
+      },
+    ],
+  });
 });
 </script>
+
+<style scoped>
+#pieChart {
+  width: 100%;
+  height: 100%;
+}
+</style>

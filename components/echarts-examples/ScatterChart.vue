@@ -1,34 +1,32 @@
 <template>
-  <v-chart class="chart" :option="option" autoresize />
+  <div id="scatterChart"></div>
 </template>
 
 <script setup>
-import { use } from "echarts/core";
-import { ScatterChart } from "echarts/charts";
-import { GridComponent } from "echarts/components";
-import { SVGRenderer } from "echarts/renderers";
-import VChart, { THEME_KEY, INIT_OPTIONS_KEY } from "vue-echarts";
-import { ref, provide } from "vue";
+import * as echarts from "echarts";
+import { onMounted } from "vue";
 
-use([GridComponent, ScatterChart, SVGRenderer]);
+onMounted(() => {
+  let myChart = echarts.init(document.getElementById("scatterChart"), "dark");
 
-provide(THEME_KEY, "dark");
-
-// provide(INIT_OPTIONS_KEY, {
-//   renderer: "svg",
-//   ssr: true,
-// });
-
-const option = ref({
-  xAxis: {
-    data: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-  },
-  yAxis: {},
-  series: [
-    {
-      type: "scatter",
-      data: [220, 182, 191, 234, 290, 330, 310],
+  myChart.setOption({
+    xAxis: {
+      data: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
     },
-  ],
+    yAxis: {},
+    series: [
+      {
+        type: "scatter",
+        data: [220, 182, 191, 234, 290, 330, 310],
+      },
+    ],
+  });
 });
 </script>
+
+<style scoped>
+#scatterChart {
+  width: 100%;
+  height: 100%;
+}
+</style>

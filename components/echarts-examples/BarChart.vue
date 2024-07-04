@@ -1,35 +1,32 @@
 <template>
-  <v-chart class="chart" :option="option" autoresize />
+  <div id="barChart"></div>
 </template>
 
 <script setup>
-import { use } from "echarts/core";
-import { BarChart } from "echarts/charts";
-import { GridComponent } from "echarts/components";
-import { SVGRenderer } from "echarts/renderers";
+import * as echarts from "echarts";
+import { onMounted } from "vue";
 
-import VChart, { THEME_KEY, INIT_OPTIONS_KEY } from "vue-echarts";
-import { ref, provide } from "vue";
+onMounted(() => {
+  let myChart = echarts.init(document.getElementById("barChart"), "dark");
 
-use([GridComponent, BarChart, SVGRenderer]);
-
-provide(THEME_KEY, "dark");
-
-// provide(INIT_OPTIONS_KEY, {
-//   renderer: "svg",
-//   ssr: true,
-// });
-
-const option = ref({
-  xAxis: {
-    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-  },
-  yAxis: {},
-  series: [
-    {
-      type: "bar",
-      data: [23, 24, 18, 25, 27, 28, 25],
+  myChart.setOption({
+    xAxis: {
+      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     },
-  ],
+    yAxis: {},
+    series: [
+      {
+        type: "bar",
+        data: [23, 24, 18, 25, 27, 28, 25],
+      },
+    ],
+  });
 });
 </script>
+
+<style scoped>
+#barChart {
+  width: 100%;
+  height: 100%;
+}
+</style>

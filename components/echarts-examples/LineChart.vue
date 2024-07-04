@@ -1,38 +1,35 @@
 <template>
-  <v-chart class="chart" :option="option" autoresize />
+  <div id="lineChart"></div>
 </template>
 
 <script setup>
-import { use } from "echarts/core";
-import { LineChart } from "echarts/charts";
-import { GridComponent } from "echarts/components";
-import { SVGRenderer } from "echarts/renderers";
+import * as echarts from "echarts";
+import { onMounted } from "vue";
 
-import VChart, { THEME_KEY, INIT_OPTIONS_KEY } from "vue-echarts";
-import { ref, provide } from "vue";
+onMounted(() => {
+  let myChart = echarts.init(document.getElementById("lineChart"), "dark");
 
-use([GridComponent, LineChart, SVGRenderer]);
-
-provide(THEME_KEY, "dark");
-
-// provide(INIT_OPTIONS_KEY, {
-//   renderer: "svg",
-//   ssr: true,
-// });
-
-const option = ref({
-  xAxis: {
-    type: "category",
-    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-  },
-  yAxis: {
-    type: "value",
-  },
-  series: [
-    {
-      data: [150, 230, 224, 218, 135, 147, 260],
-      type: "line",
+  myChart.setOption({
+    xAxis: {
+      type: "category",
+      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     },
-  ],
+    yAxis: {
+      type: "value",
+    },
+    series: [
+      {
+        data: [150, 230, 224, 218, 135, 147, 260],
+        type: "line",
+      },
+    ],
+  });
 });
 </script>
+
+<style scoped>
+#lineChart {
+  width: 100%;
+  height: 100%;
+}
+</style>
