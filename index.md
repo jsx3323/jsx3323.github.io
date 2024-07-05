@@ -11,8 +11,8 @@ hero:
       text: ECharts Examples
       link: /echarts-examples
     - theme: alt
-      text: D3 Examples
-      link: /d3-examples
+      text: Number Guessing Game
+      link: /number-guessing-game
 
 features:
   - title: ECharts
