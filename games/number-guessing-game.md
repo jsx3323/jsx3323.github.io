@@ -1,5 +1,5 @@
 <script setup>
-import NumberGuessingGame from "./components/games/NumberGuessingGame.vue"
+import NumberGuessingGame from "./components/NumberGuessingGame.vue"
 </script>
 
 # Number guessing game

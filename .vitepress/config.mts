@@ -8,22 +8,23 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
-      { text: "Examples", link: "/echarts-examples" },
-      { text: "Games", link: "/number-guessing-game" },
+      { text: "Examples", link: "/examples/echarts-examples" },
+      { text: "Games", link: "/games/number-guessing-game" },
     ],
 
     sidebar: [
       {
         text: "Examples",
         items: [
-          { text: "ECharts Examples", link: "/echarts-examples" },
-          { text: "D3 Examples", link: "/d3-examples" },
+          { text: "ECharts Examples", link: "/examples/echarts-examples" },
+          { text: "D3 Examples", link: "/examples/d3-examples" },
         ],
       },
       {
         text: "Games",
         items: [
-          { text: "Number Guessing Game", link: "/number-guessing-game"}
+          { text: "Number Guessing Game", link: "/games/number-guessing-game"},
+          { text: "Tic-Tac-Toe", link: "/games/tic-tac-toe"}
         ],
       },
     ],

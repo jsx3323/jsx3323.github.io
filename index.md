@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: ECharts Examples
-      link: /echarts-examples
+      link: /examples/echarts-examples
     - theme: alt
       text: Number Guessing Game
-      link: /number-guessing-game
+      link: /games/number-guessing-game
 
 features:
   - title: ECharts
