@@ -1,10 +1,11 @@
 <template>
-  <div id="container"></div>
+  <div ref="chart"></div>
 </template>
 
 <script setup>
 import * as d3 from "d3";
-import { onMounted } from "vue";
+import { ref, onMounted } from "vue";
+import alphabet from "../asset/alphabet.json";
 
 function barChart(data) {
   const width = 928;
@@ -78,11 +79,10 @@ function barChart(data) {
   return svg.node();
 }
 
+const chart = ref(null)
+
 onMounted(() => {
-  d3.csv("/data/alphabet.csv").then((res) => {
-    const container = document.getElementById("container");
-    // Append the SVG element.
-    container.append(barChart(res));
-  });
+  // Append the SVG element.
+  chart.value.append(barChart(alphabet));
 });
 </script>

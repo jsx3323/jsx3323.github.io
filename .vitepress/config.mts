@@ -18,6 +18,7 @@ export default defineConfig({
           text: "Echarts",
           items: [
             { text: "Common Charts", link: "/examples/echarts/common-charts" },
+            { text: "Basic Bar Chart", link: "/examples/echarts/basic-bar-chart" },
           ],
         },
         {
@@ -29,7 +30,7 @@ export default defineConfig({
         {
           text: "Plot",
           items: [
-            { text: "Bar Chart", link: "/examples/plot/bar-chart" },
+            { text: "Scatter Plot", link: "/examples/plot/scatter-plot" },
           ],
         },
       ],
