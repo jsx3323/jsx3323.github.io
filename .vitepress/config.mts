@@ -18,6 +18,7 @@ export default defineConfig({
         items: [
           { text: "ECharts Examples", link: "/examples/echarts-examples" },
           { text: "D3 Examples", link: "/examples/d3-examples" },
+          { text: "Plot Examples", link: "/examples/plot-examples" },
         ],
       },
       {
