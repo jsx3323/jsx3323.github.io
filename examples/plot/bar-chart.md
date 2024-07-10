@@ -1,5 +1,5 @@
 <script setup>
-  import BarChart from "./components/plot-examples/BarChart.vue"
+  import BarChart from "./components/BarChart.vue"
 </script>
 
 <style module>
@@ -10,6 +10,10 @@
 </style>
 
 # Plot Examples
+
+<a href="https://observablehq.com/plot/">
+    <img style="vertical-align: top; height: 100px;" src="/asset/plot-logo.svg?raw=true" alt="plot-logo">
+</a>
 
 Observable Plot is a free, open-source, JavaScript library for visualizing tabular data, focused on accelerating exploratory data analysis. It has a concise, memorable, yet expressive interface, featuring scales and layered marks in the grammar of graphics style popularized by Leland Wilkinson and Hadley Wickham and inspired by the earlier ideas of Jacques Bertin. And there are plenty of examples to learn from and copy-paste.
 

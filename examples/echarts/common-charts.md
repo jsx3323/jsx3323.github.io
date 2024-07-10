@@ -1,8 +1,8 @@
 <script setup>
-import BarChart from "./components/echarts-examples/BarChart.vue"
-import LineChart from "./components/echarts-examples/LineChart.vue"
-import PieChart from "./components/echarts-examples/PieChart.vue"
-import ScatterChart from "./components/echarts-examples/ScatterChart.vue"
+import BarChart from "./components/BarChart.vue"
+import LineChart from "./components/LineChart.vue"
+import PieChart from "./components/PieChart.vue"
+import ScatterChart from "./components/ScatterChart.vue"
 
 </script>
 
@@ -16,7 +16,7 @@ import ScatterChart from "./components/echarts-examples/ScatterChart.vue"
 # ECharts Examples
 
 <a href="https://echarts.apache.org">
-    <img style="vertical-align: top; height: 50px;" src="../asset/echarts-logo.png?raw=true" alt="echarts-logo">
+    <img style="vertical-align: top; height: 50px;" src="/asset/echarts-logo.png?raw=true" alt="echarts-logo">
 </a>
 
 **Apache ECharts** is a free, powerful charting and visualization library offering easy ways to add intuitive, interactive, and highly customizable charts to your commercial products. It is written in pure JavaScript and based on [zrender](https://github.com/ecomfe/zrender), which is a whole new lightweight canvas library
