@@ -1,27 +1,22 @@
 <template>
-  <div id="barChart"></div>
+  <Chart :option="option" id="barChart" />
 </template>
 
 <script setup>
-import * as echarts from "echarts";
-import { onMounted } from "vue";
+import Chart from "./Chart.vue";
 
-onMounted(() => {
-  let myChart = echarts.init(document.getElementById("barChart"), "dark");
-
-  myChart.setOption({
-    xAxis: {
-      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+const option = {
+  xAxis: {
+    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  },
+  yAxis: {},
+  series: [
+    {
+      type: "bar",
+      data: [23, 24, 18, 25, 27, 28, 25],
     },
-    yAxis: {},
-    series: [
-      {
-        type: "bar",
-        data: [23, 24, 18, 25, 27, 28, 25],
-      },
-    ],
-  });
-});
+  ],
+};
 </script>
 
 <style scoped>

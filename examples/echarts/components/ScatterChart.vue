@@ -1,15 +1,11 @@
 <template>
-  <div id="scatterChart"></div>
+  <Chart :option="option" id="scatterChart" />
 </template>
 
 <script setup>
-import * as echarts from "echarts";
-import { onMounted } from "vue";
+import Chart from "./Chart.vue";
 
-onMounted(() => {
-  let myChart = echarts.init(document.getElementById("scatterChart"), "dark");
-
-  myChart.setOption({
+const option = {
     xAxis: {
       data: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
     },
@@ -20,8 +16,7 @@ onMounted(() => {
         data: [220, 182, 191, 234, 290, 330, 310],
       },
     ],
-  });
-});
+  };
 </script>
 
 <style scoped>

@@ -1,36 +1,31 @@
 <template>
-  <div id="pieChart"></div>
+  <Chart :option="option" id="pieChart" />
 </template>
 
 <script setup>
-import * as echarts from "echarts";
-import { onMounted } from "vue";
+import Chart from "./Chart.vue";
 
-onMounted(() => {
-  let myChart = echarts.init(document.getElementById("pieChart"), "dark");
-
-  myChart.setOption({
-    series: [
-      {
-        type: "pie",
-        data: [
-          {
-            value: 335,
-            name: "Direct Visit",
-          },
-          {
-            value: 234,
-            name: "Union Ad",
-          },
-          {
-            value: 1548,
-            name: "Search Engine",
-          },
-        ],
-      },
-    ],
-  });
-});
+const option = {
+  series: [
+    {
+      type: "pie",
+      data: [
+        {
+          value: 335,
+          name: "Direct Visit",
+        },
+        {
+          value: 234,
+          name: "Union Ad",
+        },
+        {
+          value: 1548,
+          name: "Search Engine",
+        },
+      ],
+    },
+  ],
+};
 </script>
 
 <style scoped>
