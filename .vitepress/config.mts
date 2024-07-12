@@ -19,6 +19,7 @@ export default defineConfig({
           items: [
             { text: "Common Charts", link: "/examples/echarts/common-charts" },
             { text: "Basic Bar Chart", link: "/examples/echarts/basic-bar-chart" },
+            { text: "Interactive", link: "/examples/echarts/interactive" },
           ],
         },
         {
