@@ -40,7 +40,7 @@ const input = ref<string>(String.raw`option = {
     }
   ]
 };`);
-const chart = ref<HTMLElement>(null);
+const chart = ref();
 
 const { isDark } = useData();
 
@@ -52,9 +52,9 @@ onMounted(() => {
 
   myChart.setOption(option);
 
-  watch(isDark, () => {
+  function setMyChart(dark: boolean) {
     myChart.dispose();
-    if (isDark.value) {
+    if (dark) {
       myChart = echarts.init(chart.value, "dark");
       chart.value.style.background = "rgb(16, 12, 42)";
     } else {
@@ -62,6 +62,10 @@ onMounted(() => {
       chart.value.style.background = "#fff";
     }
     myChart.setOption(option);
+  }
+
+  watch(isDark, () => {
+    setMyChart(isDark.value);
   });
 
   watch(input, () => {
@@ -73,54 +77,79 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.row {
-  margin: auto;
-  height: 97vh;
-  display: flex;
+@media (min-width: 320px) {
+  .row {
+    margin: auto;
+    height: 97vh;
+    display: grid;
+    align-items: center;
+  }
+  .input {
+    margin-left: 10px;
+    margin-top: 20px;
+    height: 40vh;
+    flex: 30%;
+    border: unset;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 10px;
+    display: inline-block;
+    overflow-y: scroll;
+  }
+
+  .panel {
+    display: flex;
+    /* margin-top: 5px; */
+    margin-bottom: 5px;
+    padding: 5px;
+    text-align: center;
+    align-items: center;
+  }
+  .toggleTitle {
+    margin-left: 5px;
+    margin-top: 3px;
+    text-align: center;
+    font-family: sans-serif;
+  }
+  .chartView {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 50vh;
+    /* flex: 50%; */
+  }
+
+  .chart {
+    height: 45vh;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
+    border-radius: 5px;
+    background: #fff;
+    overflow: hidden;
+    padding: 10px;
+  }
 }
 
-.input {
-  margin-left: 10px;
-  margin-top: 10px;
-  height: 97%;
-  flex: 30%;
-  border: unset;
-  box-sizing: border-box;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
-  border-radius: 5px;
-  overflow: hidden;
-  padding: 10px;
-  display: inline-block;
-}
+@media (min-width: 992px) {
+  .row {
+    margin: auto;
+    height: 97vh;
+    display: flex;
+    align-items: center;
+  }
+  .input {
+    height: 100%;
+    flex: 40%;
+  }
 
-.panel {
-  display: flex;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
-  text-align: center;
-  align-items: center;
-}
-.toggleTitle {
-  margin-left: 5px;
-  margin-top: 3px;
-  text-align: center;
-  font-family: sans-serif;
-}
-.chartView {
-  margin-left: 20px;
-  margin-right: 20px;
-  height: 97%;
-  flex: 50%;
-}
+  .chartView {
+    flex: 60%;
+    height: 100%;
+  }
 
-.chart {
-  height: calc(100% - 30px);
-  box-sizing: border-box;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
-  border-radius: 5px;
-  background: #fff;
-  overflow: hidden;
-  padding: 10px;
+  .chart {
+    height: 95%;
+  }
 }
 </style>

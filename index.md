@@ -13,6 +13,9 @@ hero:
     - theme: alt
       text: Number Guessing Game
       link: /games/number-guessing-game
+    - theme: alt
+      text: Interactive ECharts
+      link: /examples/echarts/interactive
 
 features:
   - title: ECharts
